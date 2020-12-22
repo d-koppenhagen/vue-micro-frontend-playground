@@ -13,6 +13,10 @@ module.exports = (env = {}) => ({
   },
   target: "web",
   entry: path.resolve(__dirname, "./src/main.js"),
+  // output: {
+  //   path: path.resolve(__dirname, './dist'),
+  //   publicPath: '/dist/'
+  // },
   output: {
     publicPath: "auto",
   },
@@ -55,24 +59,25 @@ module.exports = (env = {}) => ({
       filename: "[name].css",
     }),
     new ModuleFederationPlugin({
-      name: "app-shell",
+      name: "mfe2",
       filename: "remoteEntry.js",
+      // reference for loading components via module federation within itself
       remotes: {
-        mfe1: "mfe1@http://localhost:3001/remoteEntry.js",
-        mfe2: "mfe2@http://localhost:3002/remoteEntry.js",
+        home: "mfe2@http://localhost:3001/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./AppContent": "./src/components/AppContent",
+      },
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./index.html"),
-      chunks: ["main"],
     }),
     new VueLoaderPlugin(),
   ],
   devServer: {
     contentBase: path.join(__dirname),
     compress: true,
-    port: 8080,
+    port: 3002,
     hot: true,
     headers: {
       "Access-Control-Allow-Origin": "*",

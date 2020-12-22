@@ -1,6 +1,6 @@
 <template>
   <div>
-    🥳 Micro Frontend 1 loaded successfully (runs with Vue3)
+    🥳 Micro Frontend 2 loaded successfully (runs with Vue2)
   </div>
 </template>
 

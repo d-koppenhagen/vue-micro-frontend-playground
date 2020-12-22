@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Micro Frontend 1 (Standalone - Vue3)</h1>
+    <h1>Micro Frontend 2 (Standalone - Vue2)</h1>
     <app-content></app-content>
   </div>
 </template>

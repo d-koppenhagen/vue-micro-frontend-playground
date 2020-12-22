@@ -1,9 +1,14 @@
 <template>
   <div class="container app-shell">
-    <h1>Hosting App (App Shell)</h1>
+    <h1>Hosting App (App Shell - Vue3)</h1>
     <div class="container remote-component">
       <h2>remote-component (micro frontend)</h2>
       <micro-frontend-1></micro-frontend-1>
+    </div>
+
+    <div class="container remote-component">
+      <h2>remote-component (micro frontend)</h2>
+      <micro-frontend-2></micro-frontend-2>
     </div>
   </div>
 </template>
