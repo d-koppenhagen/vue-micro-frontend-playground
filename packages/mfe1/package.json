@@ -1,10 +1,10 @@
 {
-  "name": "app-shell",
+  "name": "mfe1",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-cli serve",
-    "serve": "serve dist -p 8080",
+    "serve": "serve dist -p 3001",
     "build": "webpack --mode production",
     "clean": "rm -rf dist"
   },

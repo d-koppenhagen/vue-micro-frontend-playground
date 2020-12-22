@@ -1,29 +1,28 @@
 <template>
-  <h1>Micro Frontend 1</h1>
-  <div class="app-shell-container"></div>
+  <div class="container app-shell">
+    <h1>Hosting App (App Shell)</h1>
+    <div class="container remote-component">
+      <h2>remote-component (micro frontend)</h2>
+      <micro-frontend-1></micro-frontend-1>
+    </div>
+  </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-  components: {}
-}
+export default {};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+h1, h2 {
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.app-shell-container {
-  width: 100%;
-  height: 60vh;
-  border: 3px dashed #2c3e50;
+.container {
+ padding: 10px;
+}
+.app-shell {
+  border: 1px solid rgb(61, 136, 61);
+}
+.remote-component {
+  border: 1px solid rgb(91, 91, 175);
 }
 </style>
