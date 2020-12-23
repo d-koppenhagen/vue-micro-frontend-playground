@@ -2,9 +2,10 @@
   "name": "vue-micro-frontend-playground",
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build",
+    "build": "wsrun --parallel build",
     "serve": "wsrun --parallel serve",
-    "start": "concurrently \"wsrun --parallel build\" \"wsrun --parallel serve\""
+    "clean": "wsrun --parallel clean",
+    "start": "concurrently \"npm run clean\" \"npm run build -- --watch\" \"npm run serve\""
   },
   "workspaces": [
     "packages/*"

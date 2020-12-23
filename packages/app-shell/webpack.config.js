@@ -60,6 +60,7 @@ module.exports = (env = {}) => ({
       remotes: {
         mfe1: "mfe1@http://localhost:3001/remoteEntry.js",
         mfe2: "mfe2@http://localhost:3002/remoteEntry.js",
+        reactmf: "reactmf@http://localhost:3003/remoteEntry.js",
       },
       exposes: {},
     }),
