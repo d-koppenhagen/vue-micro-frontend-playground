@@ -14,7 +14,7 @@
 
     <div class="container remote-component">
       <h2>remote-component (micro frontend)</h2>
-      <micro-frontend-3/>
+      <micro-frontend-3></micro-frontend-3>
     </div>
   </div>
 </template>

@@ -3,15 +3,22 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index",
   mode: "development",
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 3003,
+  cache: false,
+  devtool: "source-map",
+  optimization: {
+    minimize: false,
   },
+  target: "web",
+  entry: path.resolve(__dirname, "./src/main.js"),
+  // output: {
+  //   path: path.resolve(__dirname, './dist'),
+  //   publicPath: '/dist/'
+  // },
   output: {
     publicPath: "auto",
   },
+  resolve: {},
   module: {
     rules: [
       {
@@ -34,7 +41,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "reactmf",
-      library: { type: "var", name: "reactmf" },
+      // library: { type: "var", name: "reactmf" },
       filename: "remoteEntry.js",
       exposes: {
         "./AppContent": "./src/components/AppContent",
@@ -55,4 +62,15 @@ module.exports = {
       template: "./public/index.html",
     }),
   ],
+  devServer: {
+    contentBase: path.join(__dirname),
+    compress: true,
+    port: 3003,
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
+    },
+  },
 };
